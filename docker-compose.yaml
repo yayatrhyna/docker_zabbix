@@ -12,6 +12,8 @@ services:
       - "10051:10051"
     depends_on:
       - mysql-server
+    volumes:
+      - ./zabbix-init:/docker-entrypoint-initdb.d
 
   zabbix-web:
     image: zabbix/zabbix-web-nginx-mysql:latest
